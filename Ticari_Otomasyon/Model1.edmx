@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DbTicariOtomasyonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbTicariOtomasyon.dbo.Tbl_Bankalar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_Bankalar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BANKAADI" Type="varchar" MaxLength="20" />
+          <Property Name="SUBE" Type="varchar" MaxLength="20" />
+          <Property Name="IBAN" Type="varchar" MaxLength="30" />
+          <Property Name="HESAPNO" Type="varchar" MaxLength="20" />
+          <Property Name="YETKILI" Type="varchar" MaxLength="30" />
+          <Property Name="TARIH" Type="smalldatetime" />
+          <Property Name="HESAPTURU" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbTicariOtomasyon.dbo.Tbl_FaturaBilgi' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_FaturaBilgi">
+          <Key>
+            <PropertyRef Name="FATURABILGIID" />
+          </Key>
+          <Property Name="FATURABILGIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SERI" Type="char" MaxLength="1" />
+          <Property Name="SIRANO" Type="varchar" MaxLength="10" />
+          <Property Name="TARIH" Type="smalldatetime" />
+          <Property Name="SAAT" Type="time" Precision="7" />
+          <Property Name="VERGIDAIRESI" Type="varchar" MaxLength="40" />
+          <Property Name="ALICI" Type="varchar" MaxLength="40" />
+          <Property Name="TESLIMEDEN" Type="varchar" MaxLength="30" />
+          <Property Name="TESLIMALAN" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DbTicariOtomasyon.dbo.Tbl_FaturaDetay' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Tbl_FaturaDetay">
+          <Property Name="FATURAURUNID" Type="int" />
+          <Property Name="URUNAD" Type="varchar" MaxLength="20" />
+          <Property Name="MIKTAR" Type="smallint" />
+          <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="FATURAID" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbTicariOtomasyon.dbo.Tbl_Firmalar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_Firmalar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD" Type="varchar" MaxLength="40" />
+          <Property Name="YETKILISTATU" Type="varchar" MaxLength="30" />
+          <Property Name="YETKILIADSOYAD" Type="varchar" MaxLength="30" />
+          <Property Name="TELEFON1" Type="varchar" MaxLength="15" />
+          <Property Name="TELEFON2" Type="varchar" MaxLength="15" />
+          <Property Name="TELEFON3" Type="varchar" MaxLength="15" />
+          <Property Name="MAIL" Type="varchar" MaxLength="40" />
+          <Property Name="FAX" Type="varchar" MaxLength="15" />
+          <Property Name="IL" Type="varchar" MaxLength="15" />
+          <Property Name="ILCE" Type="varchar" MaxLength="20" />
+          <Property Name="VERGIDAIRESI" Type="varchar" MaxLength="30" />
+          <Property Name="ADRES" Type="varchar" MaxLength="120" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbTicariOtomasyon.dbo.Tbl_Giderler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_Giderler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ELEKTRIK" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SU" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DOGALGAZ" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="INTERNET" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MAASLAR" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EKSTRA" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="NOTLAR" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Tbl_Ilceler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ILCE" Type="varchar" MaxLength="20" />
+          <Property Name="SEHIR" Type="int" />
+        </EntityType>
+        <EntityType Name="Tbl_Iller">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SEHIR" Type="varchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="Tbl_Musteriler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD" Type="varchar" MaxLength="20" />
+          <Property Name="SOYAD" Type="varchar" MaxLength="30" />
+          <Property Name="TELEFON" Type="varchar" MaxLength="15" />
+          <Property Name="TELEFON2" Type="varchar" MaxLength="15" />
+          <Property Name="TC" Type="char" MaxLength="11" />
+          <Property Name="MAIL" Type="varchar" MaxLength="50" />
+          <Property Name="IL" Type="varchar" MaxLength="20" />
+          <Property Name="ILCE" Type="varchar" MaxLength="30" />
+          <Property Name="ADRES" Type="varchar" MaxLength="1200" />
+          <Property Name="VERGIDAIRESI" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbTicariOtomasyon.dbo.Tbl_Notlar' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_Notlar">
+          <Key>
+            <PropertyRef Name="NOTID" />
+          </Key>
+          <Property Name="NOTID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOTTARIH" Type="smalldatetime" />
+          <Property Name="NOTSAAT" Type="time" Precision="7" />
+          <Property Name="NOTBASLIK" Type="varchar" MaxLength="50" />
+          <Property Name="NOTDETAY" Type="varchar" MaxLength="250" />
+          <Property Name="NOTOLUSTURAN" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbTicariOtomasyon.dbo.Tbl_Personeller' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_Personeller">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AD" Type="varchar" MaxLength="20" />
+          <Property Name="SOYAD" Type="varchar" MaxLength="30" />
+          <Property Name="TELEFON" Type="varchar" MaxLength="15" />
+          <Property Name="TC" Type="char" MaxLength="11" />
+          <Property Name="IL" Type="nchar" MaxLength="10" />
+          <Property Name="ILCE" Type="nchar" MaxLength="10" />
+          <Property Name="ADRES" Type="nchar" MaxLength="10" />
+          <Property Name="GOREV" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'DbTicariOtomasyon.dbo.Tbl_Stoklar' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Tbl_Stoklar">
+          <Property Name="ID" Type="tinyint" />
+          <Property Name="STOKTUR" Type="varchar" MaxLength="20" />
+          <Property Name="STOKADET" Type="smallint" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DbTicariOtomasyon.dbo.Tbl_Urunler' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Tbl_Urunler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="URUNAD" Type="varchar" MaxLength="20" />
+          <Property Name="MARKA" Type="varchar" MaxLength="20" />
+          <Property Name="MODEL" Type="varchar" MaxLength="20" />
+          <Property Name="YIL" Type="char" MaxLength="4" />
+          <Property Name="ADET" Type="smallint" />
+          <Property Name="ALISFIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SATISFIYAT" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DETAY" Type="varchar" MaxLength="500" />
+        </EntityType>
+        <EntityContainer Name="DbTicariOtomasyonModelStoreContainer">
+          <EntitySet Name="Tbl_Ilceler" EntityType="Self.Tbl_Ilceler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Iller" EntityType="Self.Tbl_Iller" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Musteriler" EntityType="Self.Tbl_Musteriler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Bankalar" EntityType="Self.Tbl_Bankalar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_Bankalar].[ID] AS [ID], 
+    [Tbl_Bankalar].[BANKAADI] AS [BANKAADI], 
+    [Tbl_Bankalar].[SUBE] AS [SUBE], 
+    [Tbl_Bankalar].[IBAN] AS [IBAN], 
+    [Tbl_Bankalar].[HESAPNO] AS [HESAPNO], 
+    [Tbl_Bankalar].[YETKILI] AS [YETKILI], 
+    [Tbl_Bankalar].[TARIH] AS [TARIH], 
+    [Tbl_Bankalar].[HESAPTURU] AS [HESAPTURU]
+    FROM [dbo].[Tbl_Bankalar] AS [Tbl_Bankalar]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tbl_FaturaBilgi" EntityType="Self.Tbl_FaturaBilgi" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_FaturaBilgi].[FATURABILGIID] AS [FATURABILGIID], 
+    [Tbl_FaturaBilgi].[SERI] AS [SERI], 
+    [Tbl_FaturaBilgi].[SIRANO] AS [SIRANO], 
+    [Tbl_FaturaBilgi].[TARIH] AS [TARIH], 
+    [Tbl_FaturaBilgi].[SAAT] AS [SAAT], 
+    [Tbl_FaturaBilgi].[VERGIDAIRESI] AS [VERGIDAIRESI], 
+    [Tbl_FaturaBilgi].[ALICI] AS [ALICI], 
+    [Tbl_FaturaBilgi].[TESLIMEDEN] AS [TESLIMEDEN], 
+    [Tbl_FaturaBilgi].[TESLIMALAN] AS [TESLIMALAN]
+    FROM [dbo].[Tbl_FaturaBilgi] AS [Tbl_FaturaBilgi]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tbl_Firmalar" EntityType="Self.Tbl_Firmalar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_Firmalar].[ID] AS [ID], 
+    [Tbl_Firmalar].[AD] AS [AD], 
+    [Tbl_Firmalar].[YETKILISTATU] AS [YETKILISTATU], 
+    [Tbl_Firmalar].[YETKILIADSOYAD] AS [YETKILIADSOYAD], 
+    [Tbl_Firmalar].[TELEFON1] AS [TELEFON1], 
+    [Tbl_Firmalar].[TELEFON2] AS [TELEFON2], 
+    [Tbl_Firmalar].[TELEFON3] AS [TELEFON3], 
+    [Tbl_Firmalar].[MAIL] AS [MAIL], 
+    [Tbl_Firmalar].[FAX] AS [FAX], 
+    [Tbl_Firmalar].[IL] AS [IL], 
+    [Tbl_Firmalar].[ILCE] AS [ILCE], 
+    [Tbl_Firmalar].[VERGIDAIRESI] AS [VERGIDAIRESI], 
+    [Tbl_Firmalar].[ADRES] AS [ADRES]
+    FROM [dbo].[Tbl_Firmalar] AS [Tbl_Firmalar]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tbl_Giderler" EntityType="Self.Tbl_Giderler" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_Giderler].[ID] AS [ID], 
+    [Tbl_Giderler].[ELEKTRIK] AS [ELEKTRIK], 
+    [Tbl_Giderler].[SU] AS [SU], 
+    [Tbl_Giderler].[DOGALGAZ] AS [DOGALGAZ], 
+    [Tbl_Giderler].[INTERNET] AS [INTERNET], 
+    [Tbl_Giderler].[MAASLAR] AS [MAASLAR], 
+    [Tbl_Giderler].[EKSTRA] AS [EKSTRA], 
+    [Tbl_Giderler].[NOTLAR] AS [NOTLAR]
+    FROM [dbo].[Tbl_Giderler] AS [Tbl_Giderler]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tbl_Notlar" EntityType="Self.Tbl_Notlar" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_Notlar].[NOTID] AS [NOTID], 
+    [Tbl_Notlar].[NOTTARIH] AS [NOTTARIH], 
+    [Tbl_Notlar].[NOTSAAT] AS [NOTSAAT], 
+    [Tbl_Notlar].[NOTBASLIK] AS [NOTBASLIK], 
+    [Tbl_Notlar].[NOTDETAY] AS [NOTDETAY], 
+    [Tbl_Notlar].[NOTOLUSTURAN] AS [NOTOLUSTURAN]
+    FROM [dbo].[Tbl_Notlar] AS [Tbl_Notlar]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tbl_Personeller" EntityType="Self.Tbl_Personeller" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_Personeller].[ID] AS [ID], 
+    [Tbl_Personeller].[AD] AS [AD], 
+    [Tbl_Personeller].[SOYAD] AS [SOYAD], 
+    [Tbl_Personeller].[TELEFON] AS [TELEFON], 
+    [Tbl_Personeller].[TC] AS [TC], 
+    [Tbl_Personeller].[IL] AS [IL], 
+    [Tbl_Personeller].[ILCE] AS [ILCE], 
+    [Tbl_Personeller].[ADRES] AS [ADRES], 
+    [Tbl_Personeller].[GOREV] AS [GOREV]
+    FROM [dbo].[Tbl_Personeller] AS [Tbl_Personeller]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Tbl_Urunler" EntityType="Self.Tbl_Urunler" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Tbl_Urunler].[ID] AS [ID], 
+    [Tbl_Urunler].[URUNAD] AS [URUNAD], 
+    [Tbl_Urunler].[MARKA] AS [MARKA], 
+    [Tbl_Urunler].[MODEL] AS [MODEL], 
+    [Tbl_Urunler].[YIL] AS [YIL], 
+    [Tbl_Urunler].[ADET] AS [ADET], 
+    [Tbl_Urunler].[ALISFIYAT] AS [ALISFIYAT], 
+    [Tbl_Urunler].[SATISFIYAT] AS [SATISFIYAT], 
+    [Tbl_Urunler].[DETAY] AS [DETAY]
+    FROM [dbo].[Tbl_Urunler] AS [Tbl_Urunler]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DbTicariOtomasyonModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Ilceler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ILCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SEHIR" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tbl_Iller">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SEHIR" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Musteriler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ILCE" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ADRES" Type="String" MaxLength="1200" FixedLength="false" Unicode="false" />
+          <Property Name="VERGIDAIRESI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Bankalar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BANKAADI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SUBE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IBAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="HESAPNO" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="YETKILI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TARIH" Type="DateTime" Precision="0" />
+          <Property Name="HESAPTURU" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_FaturaBilgi">
+          <Key>
+            <PropertyRef Name="FATURABILGIID" />
+          </Key>
+          <Property Name="FATURABILGIID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SERI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SIRANO" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TARIH" Type="DateTime" Precision="0" />
+          <Property Name="SAAT" Type="Time" Precision="7" />
+          <Property Name="VERGIDAIRESI" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="ALICI" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TESLIMEDEN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TESLIMALAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Firmalar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AD" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="YETKILISTATU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="YETKILIADSOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON1" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON2" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON3" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="FAX" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="IL" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="ILCE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="VERGIDAIRESI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ADRES" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Giderler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ELEKTRIK" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SU" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DOGALGAZ" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="INTERNET" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MAASLAR" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EKSTRA" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="NOTLAR" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Notlar">
+          <Key>
+            <PropertyRef Name="NOTID" />
+          </Key>
+          <Property Name="NOTID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOTTARIH" Type="DateTime" Precision="0" />
+          <Property Name="NOTSAAT" Type="Time" Precision="7" />
+          <Property Name="NOTBASLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NOTDETAY" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="NOTOLUSTURAN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Personeller">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SOYAD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="TC" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
+          <Property Name="IL" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ILCE" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ADRES" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="GOREV" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Urunler">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="URUNAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MARKA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="MODEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="YIL" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="ADET" Type="Int16" />
+          <Property Name="ALISFIYAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SATISFIYAT" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DETAY" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DbTicariOtomasyonEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Ilceler" EntityType="Self.Tbl_Ilceler" />
+          <EntitySet Name="Tbl_Iller" EntityType="Self.Tbl_Iller" />
+          <EntitySet Name="Tbl_Musteriler" EntityType="Self.Tbl_Musteriler" />
+          <EntitySet Name="Tbl_Bankalar" EntityType="Self.Tbl_Bankalar" />
+          <EntitySet Name="Tbl_FaturaBilgi" EntityType="Self.Tbl_FaturaBilgi" />
+          <EntitySet Name="Tbl_Firmalar" EntityType="Self.Tbl_Firmalar" />
+          <EntitySet Name="Tbl_Giderler" EntityType="Self.Tbl_Giderler" />
+          <EntitySet Name="Tbl_Notlar" EntityType="Self.Tbl_Notlar" />
+          <EntitySet Name="Tbl_Personeller" EntityType="Self.Tbl_Personeller" />
+          <EntitySet Name="Tbl_Urunler" EntityType="Self.Tbl_Urunler" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DbTicariOtomasyonModelStoreContainer" CdmEntityContainer="DbTicariOtomasyonEntities">
+          <EntitySetMapping Name="Tbl_Ilceler">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Ilceler">
+              <MappingFragment StoreEntitySet="Tbl_Ilceler">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Iller">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Iller">
+              <MappingFragment StoreEntitySet="Tbl_Iller">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Musteriler">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Musteriler">
+              <MappingFragment StoreEntitySet="Tbl_Musteriler">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="IL" ColumnName="IL" />
+                <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="VERGIDAIRESI" ColumnName="VERGIDAIRESI" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Bankalar">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Bankalar">
+              <MappingFragment StoreEntitySet="Tbl_Bankalar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BANKAADI" ColumnName="BANKAADI" />
+                <ScalarProperty Name="SUBE" ColumnName="SUBE" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="HESAPNO" ColumnName="HESAPNO" />
+                <ScalarProperty Name="YETKILI" ColumnName="YETKILI" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="HESAPTURU" ColumnName="HESAPTURU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_FaturaBilgi">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_FaturaBilgi">
+              <MappingFragment StoreEntitySet="Tbl_FaturaBilgi">
+                <ScalarProperty Name="FATURABILGIID" ColumnName="FATURABILGIID" />
+                <ScalarProperty Name="SERI" ColumnName="SERI" />
+                <ScalarProperty Name="SIRANO" ColumnName="SIRANO" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="SAAT" ColumnName="SAAT" />
+                <ScalarProperty Name="VERGIDAIRESI" ColumnName="VERGIDAIRESI" />
+                <ScalarProperty Name="ALICI" ColumnName="ALICI" />
+                <ScalarProperty Name="TESLIMEDEN" ColumnName="TESLIMEDEN" />
+                <ScalarProperty Name="TESLIMALAN" ColumnName="TESLIMALAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Firmalar">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Firmalar">
+              <MappingFragment StoreEntitySet="Tbl_Firmalar">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="YETKILISTATU" ColumnName="YETKILISTATU" />
+                <ScalarProperty Name="YETKILIADSOYAD" ColumnName="YETKILIADSOYAD" />
+                <ScalarProperty Name="TELEFON1" ColumnName="TELEFON1" />
+                <ScalarProperty Name="TELEFON2" ColumnName="TELEFON2" />
+                <ScalarProperty Name="TELEFON3" ColumnName="TELEFON3" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+                <ScalarProperty Name="FAX" ColumnName="FAX" />
+                <ScalarProperty Name="IL" ColumnName="IL" />
+                <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+                <ScalarProperty Name="VERGIDAIRESI" ColumnName="VERGIDAIRESI" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Giderler">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Giderler">
+              <MappingFragment StoreEntitySet="Tbl_Giderler">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ELEKTRIK" ColumnName="ELEKTRIK" />
+                <ScalarProperty Name="SU" ColumnName="SU" />
+                <ScalarProperty Name="DOGALGAZ" ColumnName="DOGALGAZ" />
+                <ScalarProperty Name="INTERNET" ColumnName="INTERNET" />
+                <ScalarProperty Name="MAASLAR" ColumnName="MAASLAR" />
+                <ScalarProperty Name="EKSTRA" ColumnName="EKSTRA" />
+                <ScalarProperty Name="NOTLAR" ColumnName="NOTLAR" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Notlar">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Notlar">
+              <MappingFragment StoreEntitySet="Tbl_Notlar">
+                <ScalarProperty Name="NOTID" ColumnName="NOTID" />
+                <ScalarProperty Name="NOTTARIH" ColumnName="NOTTARIH" />
+                <ScalarProperty Name="NOTSAAT" ColumnName="NOTSAAT" />
+                <ScalarProperty Name="NOTBASLIK" ColumnName="NOTBASLIK" />
+                <ScalarProperty Name="NOTDETAY" ColumnName="NOTDETAY" />
+                <ScalarProperty Name="NOTOLUSTURAN" ColumnName="NOTOLUSTURAN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Personeller">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Personeller">
+              <MappingFragment StoreEntitySet="Tbl_Personeller">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AD" ColumnName="AD" />
+                <ScalarProperty Name="SOYAD" ColumnName="SOYAD" />
+                <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+                <ScalarProperty Name="TC" ColumnName="TC" />
+                <ScalarProperty Name="IL" ColumnName="IL" />
+                <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+                <ScalarProperty Name="ADRES" ColumnName="ADRES" />
+                <ScalarProperty Name="GOREV" ColumnName="GOREV" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Urunler">
+            <EntityTypeMapping TypeName="DbTicariOtomasyonModel.Tbl_Urunler">
+              <MappingFragment StoreEntitySet="Tbl_Urunler">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="URUNAD" ColumnName="URUNAD" />
+                <ScalarProperty Name="MARKA" ColumnName="MARKA" />
+                <ScalarProperty Name="MODEL" ColumnName="MODEL" />
+                <ScalarProperty Name="YIL" ColumnName="YIL" />
+                <ScalarProperty Name="ADET" ColumnName="ADET" />
+                <ScalarProperty Name="ALISFIYAT" ColumnName="ALISFIYAT" />
+                <ScalarProperty Name="SATISFIYAT" ColumnName="SATISFIYAT" />
+                <ScalarProperty Name="DETAY" ColumnName="DETAY" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
