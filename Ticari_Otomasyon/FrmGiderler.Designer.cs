@@ -33,40 +33,42 @@
             this.gridAlan = new DevExpress.XtraGrid.GridControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cmbAy = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.txtGorev = new DevExpress.XtraEditors.TextEdit();
+            this.txtExtra = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.cbIlce = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbIl = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txttc = new System.Windows.Forms.MaskedTextBox();
-            this.txtTelefon = new System.Windows.Forms.MaskedTextBox();
             this.guncelleBtn = new DevExpress.XtraEditors.SimpleButton();
             this.silBtn = new DevExpress.XtraEditors.SimpleButton();
             this.temizleBtn = new DevExpress.XtraEditors.SimpleButton();
-            this.rtDetay = new System.Windows.Forms.RichTextBox();
+            this.rtNotlar = new System.Windows.Forms.RichTextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.txtMail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.txtSoyad = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbAy = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmbYil = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.dogalgaz = new DevExpress.XtraEditors.TextEdit();
+            this.su = new DevExpress.XtraEditors.TextEdit();
+            this.elektrik = new DevExpress.XtraEditors.TextEdit();
+            this.internet = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaas = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGorev.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbIlce.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbIl.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAy.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtExtra.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbYil.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dogalgaz.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.su.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elektrik.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.internet.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaas.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView1
@@ -100,26 +102,26 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.txtMaas);
+            this.groupControl1.Controls.Add(this.internet);
+            this.groupControl1.Controls.Add(this.elektrik);
+            this.groupControl1.Controls.Add(this.su);
+            this.groupControl1.Controls.Add(this.cmbYil);
             this.groupControl1.Controls.Add(this.cmbAy);
             this.groupControl1.Controls.Add(this.simpleButton2);
             this.groupControl1.Controls.Add(this.labelControl11);
-            this.groupControl1.Controls.Add(this.txtGorev);
+            this.groupControl1.Controls.Add(this.txtExtra);
             this.groupControl1.Controls.Add(this.labelControl10);
-            this.groupControl1.Controls.Add(this.cbIlce);
-            this.groupControl1.Controls.Add(this.cbIl);
-            this.groupControl1.Controls.Add(this.txttc);
-            this.groupControl1.Controls.Add(this.txtTelefon);
             this.groupControl1.Controls.Add(this.guncelleBtn);
             this.groupControl1.Controls.Add(this.silBtn);
             this.groupControl1.Controls.Add(this.temizleBtn);
-            this.groupControl1.Controls.Add(this.rtDetay);
+            this.groupControl1.Controls.Add(this.rtNotlar);
             this.groupControl1.Controls.Add(this.labelControl7);
             this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.txtMail);
+            this.groupControl1.Controls.Add(this.dogalgaz);
             this.groupControl1.Controls.Add(this.labelControl9);
             this.groupControl1.Controls.Add(this.labelControl6);
             this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.txtSoyad);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtID);
@@ -130,68 +132,56 @@
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "Müşteri Kayıt Oluştur";
             // 
+            // cmbAy
+            // 
+            this.cmbAy.Location = new System.Drawing.Point(138, 70);
+            this.cmbAy.Name = "cmbAy";
+            this.cmbAy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbAy.Properties.Items.AddRange(new object[] {
+            "OCAK",
+            "ŞUBAT",
+            "MART",
+            "NİSAN",
+            "MAYIS",
+            "HAZİRAN",
+            "TEMMUZ",
+            "AĞUSTOS",
+            "EYLÜL",
+            "EKİM",
+            "KASIM",
+            "ARALIK"});
+            this.cmbAy.Size = new System.Drawing.Size(125, 22);
+            this.cmbAy.TabIndex = 30;
+            // 
             // labelControl11
             // 
             this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl11.Appearance.Options.UseFont = true;
-            this.labelControl11.Location = new System.Drawing.Point(41, 323);
+            this.labelControl11.Location = new System.Drawing.Point(40, 339);
             this.labelControl11.Name = "labelControl11";
             this.labelControl11.Size = new System.Drawing.Size(47, 22);
             this.labelControl11.TabIndex = 28;
             this.labelControl11.Text = "Notlar";
             // 
-            // txtGorev
+            // txtExtra
             // 
-            this.txtGorev.Location = new System.Drawing.Point(134, 286);
-            this.txtGorev.Name = "txtGorev";
-            this.txtGorev.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtGorev.Properties.Appearance.Options.UseFont = true;
-            this.txtGorev.Size = new System.Drawing.Size(125, 28);
-            this.txtGorev.TabIndex = 27;
+            this.txtExtra.Location = new System.Drawing.Point(139, 296);
+            this.txtExtra.Name = "txtExtra";
+            this.txtExtra.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtExtra.Properties.Appearance.Options.UseFont = true;
+            this.txtExtra.Size = new System.Drawing.Size(125, 28);
+            this.txtExtra.TabIndex = 27;
             // 
             // labelControl10
             // 
             this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.Location = new System.Drawing.Point(82, 289);
+            this.labelControl10.Location = new System.Drawing.Point(87, 299);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(46, 22);
             this.labelControl10.TabIndex = 26;
             this.labelControl10.Text = "Extra:";
-            // 
-            // cbIlce
-            // 
-            this.cbIlce.Location = new System.Drawing.Point(138, 258);
-            this.cbIlce.Name = "cbIlce";
-            this.cbIlce.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbIlce.Size = new System.Drawing.Size(125, 22);
-            this.cbIlce.TabIndex = 25;
-            // 
-            // cbIl
-            // 
-            this.cbIl.Location = new System.Drawing.Point(138, 230);
-            this.cbIl.Name = "cbIl";
-            this.cbIl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbIl.Size = new System.Drawing.Size(125, 22);
-            this.cbIl.TabIndex = 24;
-            // 
-            // txttc
-            // 
-            this.txttc.Location = new System.Drawing.Point(136, 164);
-            this.txttc.Mask = "00000000000";
-            this.txttc.Name = "txttc";
-            this.txttc.Size = new System.Drawing.Size(123, 23);
-            this.txttc.TabIndex = 23;
-            // 
-            // txtTelefon
-            // 
-            this.txtTelefon.Location = new System.Drawing.Point(137, 138);
-            this.txtTelefon.Mask = "(999) 000-0000";
-            this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(123, 23);
-            this.txtTelefon.TabIndex = 21;
             // 
             // guncelleBtn
             // 
@@ -223,19 +213,19 @@
             this.temizleBtn.TabIndex = 18;
             this.temizleBtn.Text = "Temizle";
             // 
-            // rtDetay
+            // rtNotlar
             // 
-            this.rtDetay.Location = new System.Drawing.Point(100, 323);
-            this.rtDetay.Name = "rtDetay";
-            this.rtDetay.Size = new System.Drawing.Size(210, 157);
-            this.rtDetay.TabIndex = 17;
-            this.rtDetay.Text = "";
+            this.rtNotlar.Location = new System.Drawing.Point(93, 339);
+            this.rtNotlar.Name = "rtNotlar";
+            this.rtNotlar.Size = new System.Drawing.Size(210, 157);
+            this.rtNotlar.TabIndex = 17;
+            this.rtNotlar.Text = "";
             // 
             // labelControl7
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(93, 256);
+            this.labelControl7.Location = new System.Drawing.Point(92, 265);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(46, 22);
             this.labelControl7.TabIndex = 16;
@@ -250,15 +240,6 @@
             this.labelControl8.Size = new System.Drawing.Size(69, 22);
             this.labelControl8.TabIndex = 14;
             this.labelControl8.Text = "İnternet:";
-            // 
-            // txtMail
-            // 
-            this.txtMail.Location = new System.Drawing.Point(138, 196);
-            this.txtMail.Name = "txtMail";
-            this.txtMail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMail.Properties.Appearance.Options.UseFont = true;
-            this.txtMail.Size = new System.Drawing.Size(125, 28);
-            this.txtMail.TabIndex = 13;
             // 
             // labelControl9
             // 
@@ -289,15 +270,6 @@
             this.labelControl5.Size = new System.Drawing.Size(63, 22);
             this.labelControl5.TabIndex = 7;
             this.labelControl5.Text = "Elektrik:";
-            // 
-            // txtSoyad
-            // 
-            this.txtSoyad.Location = new System.Drawing.Point(137, 99);
-            this.txtSoyad.Name = "txtSoyad";
-            this.txtSoyad.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtSoyad.Properties.Appearance.Options.UseFont = true;
-            this.txtSoyad.Size = new System.Drawing.Size(125, 28);
-            this.txtSoyad.TabIndex = 5;
             // 
             // labelControl3
             // 
@@ -338,27 +310,62 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "ID:";
             // 
-            // cmbAy
+            // cmbYil
             // 
-            this.cmbAy.Location = new System.Drawing.Point(138, 70);
-            this.cmbAy.Name = "cmbAy";
-            this.cmbAy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbYil.Location = new System.Drawing.Point(138, 104);
+            this.cmbYil.Name = "cmbYil";
+            this.cmbYil.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbAy.Properties.Items.AddRange(new object[] {
-            "OCAK",
-            "ŞUBAT",
-            "MART",
-            "NİSAN",
-            "MAYIS",
-            "HAZİRAN",
-            "TEMMUZ",
-            "AĞUSTOS",
-            "EYLÜL",
-            "EKİM",
-            "KASIM",
-            "ARALIK"});
-            this.cmbAy.Size = new System.Drawing.Size(125, 22);
-            this.cmbAy.TabIndex = 30;
+            this.cmbYil.Properties.Items.AddRange(new object[] {
+            "2025",
+            "2026"});
+            this.cmbYil.Size = new System.Drawing.Size(125, 22);
+            this.cmbYil.TabIndex = 31;
+            // 
+            // dogalgaz
+            // 
+            this.dogalgaz.Location = new System.Drawing.Point(139, 197);
+            this.dogalgaz.Name = "dogalgaz";
+            this.dogalgaz.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dogalgaz.Properties.Appearance.Options.UseFont = true;
+            this.dogalgaz.Size = new System.Drawing.Size(125, 28);
+            this.dogalgaz.TabIndex = 13;
+            // 
+            // su
+            // 
+            this.su.Location = new System.Drawing.Point(139, 167);
+            this.su.Name = "su";
+            this.su.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.su.Properties.Appearance.Options.UseFont = true;
+            this.su.Size = new System.Drawing.Size(125, 28);
+            this.su.TabIndex = 32;
+            // 
+            // elektrik
+            // 
+            this.elektrik.Location = new System.Drawing.Point(139, 133);
+            this.elektrik.Name = "elektrik";
+            this.elektrik.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.elektrik.Properties.Appearance.Options.UseFont = true;
+            this.elektrik.Size = new System.Drawing.Size(125, 28);
+            this.elektrik.TabIndex = 33;
+            // 
+            // internet
+            // 
+            this.internet.Location = new System.Drawing.Point(139, 228);
+            this.internet.Name = "internet";
+            this.internet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.internet.Properties.Appearance.Options.UseFont = true;
+            this.internet.Size = new System.Drawing.Size(125, 28);
+            this.internet.TabIndex = 34;
+            // 
+            // txtMaas
+            // 
+            this.txtMaas.Location = new System.Drawing.Point(139, 262);
+            this.txtMaas.Name = "txtMaas";
+            this.txtMaas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMaas.Properties.Appearance.Options.UseFont = true;
+            this.txtMaas.Size = new System.Drawing.Size(125, 28);
+            this.txtMaas.TabIndex = 35;
             // 
             // FrmGiderler
             // 
@@ -374,13 +381,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGorev.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbIlce.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbIl.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoyad.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAy.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtExtra.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbYil.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dogalgaz.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.su.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elektrik.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.internet.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaas.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -392,27 +401,27 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.TextEdit txtGorev;
+        private DevExpress.XtraEditors.TextEdit txtExtra;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.ComboBoxEdit cbIlce;
-        private DevExpress.XtraEditors.ComboBoxEdit cbIl;
-        private System.Windows.Forms.MaskedTextBox txttc;
-        private System.Windows.Forms.MaskedTextBox txtTelefon;
         private DevExpress.XtraEditors.SimpleButton guncelleBtn;
         private DevExpress.XtraEditors.SimpleButton silBtn;
         private DevExpress.XtraEditors.SimpleButton temizleBtn;
-        private System.Windows.Forms.RichTextBox rtDetay;
+        private System.Windows.Forms.RichTextBox rtNotlar;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.TextEdit txtMail;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.TextEdit txtSoyad;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtID;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.ComboBoxEdit cmbAy;
+        private DevExpress.XtraEditors.TextEdit txtMaas;
+        private DevExpress.XtraEditors.TextEdit internet;
+        private DevExpress.XtraEditors.TextEdit elektrik;
+        private DevExpress.XtraEditors.TextEdit su;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbYil;
+        private DevExpress.XtraEditors.TextEdit dogalgaz;
     }
 }
