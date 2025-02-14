@@ -33,6 +33,11 @@
             this.gridAlan = new DevExpress.XtraGrid.GridControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.txtMaas = new DevExpress.XtraEditors.TextEdit();
+            this.internet = new DevExpress.XtraEditors.TextEdit();
+            this.elektrik = new DevExpress.XtraEditors.TextEdit();
+            this.su = new DevExpress.XtraEditors.TextEdit();
+            this.cmbYil = new DevExpress.XtraEditors.ComboBoxEdit();
             this.cmbAy = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.txtExtra = new DevExpress.XtraEditors.TextEdit();
@@ -43,6 +48,7 @@
             this.rtNotlar = new System.Windows.Forms.RichTextBox();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.dogalgaz = new DevExpress.XtraEditors.TextEdit();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -50,25 +56,19 @@
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.cmbYil = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.dogalgaz = new DevExpress.XtraEditors.TextEdit();
-            this.su = new DevExpress.XtraEditors.TextEdit();
-            this.elektrik = new DevExpress.XtraEditors.TextEdit();
-            this.internet = new DevExpress.XtraEditors.TextEdit();
-            this.txtMaas = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.internet.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elektrik.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.su.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbYil.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExtra.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbYil.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dogalgaz.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.su.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.elektrik.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.internet.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaas.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView1
@@ -99,6 +99,7 @@
             this.simpleButton2.Size = new System.Drawing.Size(327, 29);
             this.simpleButton2.TabIndex = 29;
             this.simpleButton2.Text = "Kaydet";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // groupControl1
             // 
@@ -131,6 +132,54 @@
             this.groupControl1.Size = new System.Drawing.Size(331, 658);
             this.groupControl1.TabIndex = 8;
             this.groupControl1.Text = "Müşteri Kayıt Oluştur";
+            // 
+            // txtMaas
+            // 
+            this.txtMaas.Location = new System.Drawing.Point(139, 262);
+            this.txtMaas.Name = "txtMaas";
+            this.txtMaas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMaas.Properties.Appearance.Options.UseFont = true;
+            this.txtMaas.Size = new System.Drawing.Size(125, 28);
+            this.txtMaas.TabIndex = 35;
+            // 
+            // internet
+            // 
+            this.internet.Location = new System.Drawing.Point(139, 228);
+            this.internet.Name = "internet";
+            this.internet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.internet.Properties.Appearance.Options.UseFont = true;
+            this.internet.Size = new System.Drawing.Size(125, 28);
+            this.internet.TabIndex = 34;
+            // 
+            // elektrik
+            // 
+            this.elektrik.Location = new System.Drawing.Point(139, 133);
+            this.elektrik.Name = "elektrik";
+            this.elektrik.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.elektrik.Properties.Appearance.Options.UseFont = true;
+            this.elektrik.Size = new System.Drawing.Size(125, 28);
+            this.elektrik.TabIndex = 33;
+            // 
+            // su
+            // 
+            this.su.Location = new System.Drawing.Point(139, 167);
+            this.su.Name = "su";
+            this.su.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.su.Properties.Appearance.Options.UseFont = true;
+            this.su.Size = new System.Drawing.Size(125, 28);
+            this.su.TabIndex = 32;
+            // 
+            // cmbYil
+            // 
+            this.cmbYil.Location = new System.Drawing.Point(138, 104);
+            this.cmbYil.Name = "cmbYil";
+            this.cmbYil.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbYil.Properties.Items.AddRange(new object[] {
+            "2025",
+            "2026"});
+            this.cmbYil.Size = new System.Drawing.Size(125, 22);
+            this.cmbYil.TabIndex = 31;
             // 
             // cmbAy
             // 
@@ -241,6 +290,15 @@
             this.labelControl8.TabIndex = 14;
             this.labelControl8.Text = "İnternet:";
             // 
+            // dogalgaz
+            // 
+            this.dogalgaz.Location = new System.Drawing.Point(139, 197);
+            this.dogalgaz.Name = "dogalgaz";
+            this.dogalgaz.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.dogalgaz.Properties.Appearance.Options.UseFont = true;
+            this.dogalgaz.Size = new System.Drawing.Size(125, 28);
+            this.dogalgaz.TabIndex = 13;
+            // 
             // labelControl9
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -310,63 +368,6 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "ID:";
             // 
-            // cmbYil
-            // 
-            this.cmbYil.Location = new System.Drawing.Point(138, 104);
-            this.cmbYil.Name = "cmbYil";
-            this.cmbYil.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbYil.Properties.Items.AddRange(new object[] {
-            "2025",
-            "2026"});
-            this.cmbYil.Size = new System.Drawing.Size(125, 22);
-            this.cmbYil.TabIndex = 31;
-            // 
-            // dogalgaz
-            // 
-            this.dogalgaz.Location = new System.Drawing.Point(139, 197);
-            this.dogalgaz.Name = "dogalgaz";
-            this.dogalgaz.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dogalgaz.Properties.Appearance.Options.UseFont = true;
-            this.dogalgaz.Size = new System.Drawing.Size(125, 28);
-            this.dogalgaz.TabIndex = 13;
-            // 
-            // su
-            // 
-            this.su.Location = new System.Drawing.Point(139, 167);
-            this.su.Name = "su";
-            this.su.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.su.Properties.Appearance.Options.UseFont = true;
-            this.su.Size = new System.Drawing.Size(125, 28);
-            this.su.TabIndex = 32;
-            // 
-            // elektrik
-            // 
-            this.elektrik.Location = new System.Drawing.Point(139, 133);
-            this.elektrik.Name = "elektrik";
-            this.elektrik.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.elektrik.Properties.Appearance.Options.UseFont = true;
-            this.elektrik.Size = new System.Drawing.Size(125, 28);
-            this.elektrik.TabIndex = 33;
-            // 
-            // internet
-            // 
-            this.internet.Location = new System.Drawing.Point(139, 228);
-            this.internet.Name = "internet";
-            this.internet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.internet.Properties.Appearance.Options.UseFont = true;
-            this.internet.Size = new System.Drawing.Size(125, 28);
-            this.internet.TabIndex = 34;
-            // 
-            // txtMaas
-            // 
-            this.txtMaas.Location = new System.Drawing.Point(139, 262);
-            this.txtMaas.Name = "txtMaas";
-            this.txtMaas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtMaas.Properties.Appearance.Options.UseFont = true;
-            this.txtMaas.Size = new System.Drawing.Size(125, 28);
-            this.txtMaas.TabIndex = 35;
-            // 
             // FrmGiderler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -382,15 +383,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.internet.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.elektrik.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.su.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbYil.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbAy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExtra.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbYil.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dogalgaz.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.su.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.elektrik.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.internet.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaas.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtID.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
