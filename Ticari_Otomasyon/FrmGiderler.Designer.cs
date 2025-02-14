@@ -79,6 +79,7 @@
             this.gridView1.Appearance.Row.Options.UseBorderColor = true;
             this.gridView1.GridControl = this.gridAlan;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // gridAlan
             // 
@@ -261,6 +262,7 @@
             this.temizleBtn.Size = new System.Drawing.Size(327, 29);
             this.temizleBtn.TabIndex = 18;
             this.temizleBtn.Text = "Temizle";
+            this.temizleBtn.Click += new System.EventHandler(this.temizleBtn_Click);
             // 
             // rtNotlar
             // 
