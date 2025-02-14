@@ -376,6 +376,7 @@
             this.Controls.Add(this.groupControl1);
             this.Name = "FrmGiderler";
             this.Text = "Giderler";
+            this.Load += new System.EventHandler(this.FrmGiderler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridAlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
