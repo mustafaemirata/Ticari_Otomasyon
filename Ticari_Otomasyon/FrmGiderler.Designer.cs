@@ -242,6 +242,7 @@
             this.guncelleBtn.Size = new System.Drawing.Size(327, 29);
             this.guncelleBtn.TabIndex = 20;
             this.guncelleBtn.Text = "Güncelle";
+            this.guncelleBtn.Click += new System.EventHandler(this.guncelleBtn_Click);
             // 
             // silBtn
             // 
@@ -252,6 +253,7 @@
             this.silBtn.Size = new System.Drawing.Size(327, 29);
             this.silBtn.TabIndex = 19;
             this.silBtn.Text = "Sil";
+            this.silBtn.Click += new System.EventHandler(this.silBtn_Click);
             // 
             // temizleBtn
             // 

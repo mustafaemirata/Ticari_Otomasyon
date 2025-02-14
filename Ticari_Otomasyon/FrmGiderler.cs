@@ -88,5 +88,38 @@ namespace Ticari_Otomasyon
         {
             temizle();
         }
+
+        private void silBtn_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("Delete From TBL_Giderler where ID=@p1", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", txtID.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            giderListesi();
+            MessageBox.Show("Gider Sistemden Silindi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            temizle();
+
+        }
+
+        private void guncelleBtn_Click(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("Update TBL_Giderler set AY=@p1, YIL=@p2, ELEKTRIK=@p3, SU=@p4, DOGALGAZ=@p5, INTERNET=@p6, MAASLAR=@p7, EKSTRA=@p8, NOTLAR=@p9 where ID=@p10", bgl.baglanti());
+            komut.Parameters.AddWithValue("@p1", cmbAy.Text);
+            komut.Parameters.AddWithValue("@p2", cmbYil.Text);
+            komut.Parameters.AddWithValue("@p3", decimal.Parse(elektrik.Text));
+            komut.Parameters.AddWithValue("@p4", decimal.Parse(su.Text));
+            komut.Parameters.AddWithValue("@p5", decimal.Parse(dogalgaz.Text));
+            komut.Parameters.AddWithValue("@p6", decimal.Parse(internet.Text));
+            komut.Parameters.AddWithValue("@p7", decimal.Parse(txtMaas.Text));
+            komut.Parameters.AddWithValue("@p8", decimal.Parse(txtExtra.Text));
+            komut.Parameters.AddWithValue("@p9", rtNotlar.Text);
+            komut.Parameters.AddWithValue("@p10", txtID.Text);
+            komut.ExecuteNonQuery();
+            bgl.baglanti().Close();
+            giderListesi();
+            MessageBox.Show("Gider Bilgisi Güncellendi", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            temizle();
+
+        }
     }
 }
